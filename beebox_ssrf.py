@@ -148,7 +148,7 @@ def main():
             print(f"\tCOOKIES: {str(session_cookies)}\n\n")
         except:
             print(f"\tSSRF INJECTION #{id} ({name}) - ", end="")
-            print("REQUEST TIMED OUT (PORT ASSUMED TO BE CLOSED\n\n")    
+            print("REQUEST TIMED OUT (PORT ASSUMED TO BE CLOSED)\n\n")    
             session_cookies = login(remote_login_page=remote_login_page, 
                                         injection_data=yaml_config['post_login_injection_data'], 
                                         session_cookie_names=yaml_config['session_cookie_names'])
